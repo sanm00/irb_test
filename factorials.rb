@@ -1,4 +1,6 @@
 class Fact
+  # 体验send 实现递归
+  # 阶乘
   def fact n
     if n == 0
       1
