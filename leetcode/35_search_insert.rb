@@ -1,4 +1,3 @@
-
 class SearchInsert
 	# @param {Integer[]} nums
 	# @param {Integer} target
