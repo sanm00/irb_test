@@ -20,5 +20,5 @@ class Test
     p [].present?
   end
 
-  Test.new.test
 end
+Test.new.test
