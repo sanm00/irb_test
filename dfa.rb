@@ -36,7 +36,25 @@ class FilterSensitiveWord
     hash
   end
 
-  def scan(text = '', sensitive_words = [], sensitive_hash = hash, temp_text = '')
+  def scan(text = '')
+    _scan(gsub_text(text))
+  end
+
+  def statistics(sensitive_words)
+    s = {}
+    sensitive_words.each do |w|
+      if s[w].nil?
+        s[w] = 1
+      else
+        s[w] = s[w] + 1
+      end
+    end
+    s
+  end
+
+  private
+
+  def _scan(text = '', sensitive_words = [], sensitive_hash = hash, temp_text = '')
     c = text[0]
     return sensitive_words if text.empty?
     return sensitive_words if c.empty?
@@ -64,18 +82,6 @@ class FilterSensitiveWord
         send(__method__, text, sensitive_words, w.value, temp_text)
       end
     end
-  end
-
-  def statistics(sensitive_words)
-    s = {}
-    sensitive_words.each do |w|
-      if s[w].nil?
-        s[w] = 1
-      else
-        s[w] = s[w] + 1
-      end
-    end
-    s
   end
 
   def gsub_text(text)
