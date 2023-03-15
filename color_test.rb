@@ -1,22 +1,24 @@
 class String
-  def blue
-    return "\033[34m #{self}\033[0m"
-  end
-  def red
-    return "\033[31m #{self}\033[0m"
-  end
-  def green
-    return "\033[32m #{self}\033[0m"
-  end
-  def yellow
-    return "\033[33m #{self}\033[0m"
-  end
-  def magenta
-    return "\033[35m #{self}\033[0m"
-  end
-  def cyan
-    return "\033[36m #{self}\033[0m"
+  COLORS = {
+    black: "\e[30m",
+    red: "\e[31m",
+    green: "\e[32m",
+    yellow: "\e[33m",
+    blue: "\e[34m",
+    magenta: "\e[35m",
+    cyan: "\e[36m",
+    white: "\e[37m"
+  }
+
+  def colorize(color)
+    "#{COLORS[color.to_sym]}#{self}\e[0m"
   end
 end
 
-puts '1111'.red
+puts "This is red".colorize(:red)
+puts "This is green".colorize(:green)
+puts "This is yellow".colorize(:yellow)
+puts "This is blue".colorize(:blue)
+puts "This is magenta".colorize(:magenta)
+puts "This is cyan".colorize(:cyan)
+puts "This is white".colorize(:white)

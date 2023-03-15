@@ -1,0 +1,339 @@
+app/workers/fxiaoke_worker.rb
+
+fxiaoke_client.crm_update_accountobj(fxiaoke_id, { field_IhCo8__c: ((enterprise.enterprise_quota.title == I18n.t('backend2.experience_version') rescue false) ? I18n.t('backend2.yes') : I18n.t('backend2.no')) })
+47: I18n.t('backend2.experience_version')  体验版
+
+fxiaoke_client.crm_update_accountobj(fxiaoke_id, { field_IhCo8__c: ((enterprise.enterprise_quota.title == I18n.t('backend2.experience_version') rescue false) ? I18n.t('backend2.yes') : I18n.t('backend2.no')) })
+47: I18n.t('backend2.yes')  是
+
+fxiaoke_client.crm_update_accountobj(fxiaoke_id, { field_IhCo8__c: ((enterprise.enterprise_quota.title == I18n.t('backend2.experience_version') rescue false) ? I18n.t('backend2.yes') : I18n.t('backend2.no')) })
+47: I18n.t('backend2.no')  否
+
+field_IhCo8__c: ((enterprise.enterprise_quota.title == I18n.t('backend2.experience_version') rescue false) ? I18n.t('backend2.yes') : I18n.t('backend2.no')), # 试用政策是否是体验版
+120: I18n.t('backend2.experience_version')  体验版
+
+field_IhCo8__c: ((enterprise.enterprise_quota.title == I18n.t('backend2.experience_version') rescue false) ? I18n.t('backend2.yes') : I18n.t('backend2.no')), # 试用政策是否是体验版
+120: I18n.t('backend2.yes')  是
+
+field_IhCo8__c: ((enterprise.enterprise_quota.title == I18n.t('backend2.experience_version') rescue false) ? I18n.t('backend2.yes') : I18n.t('backend2.no')), # 试用政策是否是体验版
+120: I18n.t('backend2.no')  否
+
+app/workers/block_user_worker.rb
+
+user.block_logs.create(operator_id: operator_id, action: BlockLog::BLOCK, message: I18n.t('backend2.publish_violation_information_2021'))
+12: I18n.t('backend2.publish_violation_information_2021')  发布违规信息2021
+
+app/observers/user_observer.rb
+
+user.block_logs.create(operator_id: 1, action: BlockLog::BLOCK, message: I18n.t('backend2.account_exception'))
+11: I18n.t('backend2.account_exception')  帐号异常
+
+app/models/gitee_reward_water_bill.rb
+
+if capital_name == I18n.t('backend2.bounty_donation')
+91: I18n.t('backend2.bounty_donation')  赏金捐赠
+
+app/models/sonar_summarys/sonar_qube.rb
+
+DeployKey.create(key: sonar_worker_deploy_key, title: I18n.t('backend2.gitee_sonarqube_public_key'), key_owner: 'ci')
+225: I18n.t('backend2.gitee_sonarqube_public_key')  Gitee SonarQube 公钥
+
+app/models/scrum_version.rb
+
+stage_attr[:plan_closed_at] = plan_released_at if s == I18n.t('backend2.production_environment')
+75: I18n.t('backend2.production_environment')  生产环境
+
+self.update(current_stage_id: stage.id) if stage&.title == I18n.t('backend2.development_environment')
+77: I18n.t('backend2.development_environment')  开发环境
+
+app/models/ci_job.rb
+
+DeployKey.create(key: key, title: I18n.t('backend2.gitee_continuous_integration_public_key'), key_owner: 'ci')
+103: I18n.t('backend2.gitee_continuous_integration_public_key')  Gitee 持续集成公钥
+
+app/models/scrum_stage.rb
+
+::Sensors::ScrumVersionService.new(self.scrum_version).track_scrum_stage_create_or_update(self, self.creator, I18n.t('backend2.add_stage'))
+62: I18n.t('backend2.add_stage')  添加阶段
+
+::Sensors::ScrumVersionService.new(self.scrum_version).track_scrum_stage_create_or_update(self, self.updated_by, I18n.t('backend2.edit_stage'))
+66: I18n.t('backend2.edit_stage')  编辑阶段
+
+app/models/hooks/project_scan_service.rb
+
+key ||= DeployKey.create(key: deploy_key, title: I18n.t('backend2.giteescan_public_key'), key_owner: 'gitee-scan')
+127: I18n.t('backend2.giteescan_public_key')  GiteeScan 公钥
+
+app/models/apk.rb
+
+DeployKey.create(key: apk_build_deploy_key, title: I18n.t('backend2.gitee_android_build_public_key'), key_owner: 'ci')
+224: I18n.t('backend2.gitee_android_build_public_key')  Gitee 安卓构建公钥
+
+app/models/project_api_doc.rb
+
+DeployKey.create(key: apidoc_deploy_key, title: I18n.t('backend2.gitee_document_builds_public_key'), key_owner: 'ci')
+128: I18n.t('backend2.gitee_document_builds_public_key')  Gitee 文档构建公钥
+
+app/models/gitee_scan_task.rb
+
+key ||= DeployKey.create(key: deploy_key, title: I18n.t('backend2.giteescan_public_key'), key_owner: 'gitee-scan')
+247: I18n.t('backend2.giteescan_public_key')  GiteeScan 公钥
+
+app/services/test_cases/example_data_service.rb
+
+if CaseModule.where(base_info.merge({ name: I18n.t('backend2.registration_and_login') })).exists?
+50: I18n.t('backend2.registration_and_login')  注册与登录
+
+@child_first = CaseModule.create!(base_info.merge({ parent_id: @root_module.id, name: I18n.t('backend2.register') }))
+60: I18n.t('backend2.register')  注册
+
+@child_second = CaseModule.create!(base_info.merge({ parent_id: @root_module.id, name: I18n.t('backend2.sign_in') }))
+61: I18n.t('backend2.sign_in')  登录
+
+app/services/fosseye_scans_service.rb
+
+licenses = licenses.sort { |a,b| (a['risk'] == I18n.t('backend2.low') and -1) or (b['risk'] == I18n.t('backend2.low') and 1) or a['risk'] <=> b['risk'] } rescue licenses
+133: I18n.t('backend2.low')  低
+
+licenses = licenses.sort { |a,b| (a['risk'] == I18n.t('backend2.low') and -1) or (b['risk'] == I18n.t('backend2.low') and 1) or a['risk'] <=> b['risk'] } rescue licenses
+133: I18n.t('backend2.low')  低
+
+app/services/gitee_scans_service.rb
+
+message = I18n.t('backend2.no_problems_found_in_this_scan!') if message == I18n.t('backend2.task_does_not_exist')
+129: I18n.t('backend2.no_problems_found_in_this_scan!')  本次扫描没有发现问题！
+
+message = I18n.t('backend2.no_problems_found_in_this_scan!') if message == I18n.t('backend2.task_does_not_exist')
+129: I18n.t('backend2.task_does_not_exist')  任务不存在
+
+message = I18n.t('backend2.no_problems_found_in_this_scan!') if message == I18n.t('backend2.task_execution_does_not_exist')
+166: I18n.t('backend2.no_problems_found_in_this_scan!')  本次扫描没有发现问题！
+
+message = I18n.t('backend2.no_problems_found_in_this_scan!') if message == I18n.t('backend2.task_execution_does_not_exist')
+166: I18n.t('backend2.task_execution_does_not_exist')  任务执行不存在
+
+message = I18n.t('backend2.no_problems_found_in_this_scan!') if message == I18n.t('backend2.task_execution_does_not_exist')
+203: I18n.t('backend2.no_problems_found_in_this_scan!')  本次扫描没有发现问题！
+
+message = I18n.t('backend2.no_problems_found_in_this_scan!') if message == I18n.t('backend2.task_execution_does_not_exist')
+203: I18n.t('backend2.task_execution_does_not_exist')  任务执行不存在
+
+app/services/fxiaoke_service.rb
+
+sync_record.update_attributes!(enterprise_quota_is_trial: (enterprise.enterprise_quota.title == I18n.t('backend2.experience_version') rescue false))
+74: I18n.t('backend2.experience_version')  体验版
+
+enterprise_quota_is_trial: ((enterprise.enterprise_quota.title == I18n.t('backend2.experience_version') rescue false)), # 试用政策是否是体验版
+152: I18n.t('backend2.experience_version')  体验版
+
+app/services/import_resource/issues_service.rb
+
+return Issue::Priority_Null if priority.blank? || priority == I18n.t('backend2.no_priority')
+814: I18n.t('backend2.no_priority')  无优先级
+
+app/services/enterprises/admin/issue_type_service.rb
+
+closed_state = enterprise.issue_states.find_by(title: I18n.t('backend2.completed'))
+232: I18n.t('backend2.completed')  已完成
+
+closed_state = enterprise.issue_states.create(title: I18n.t('backend2.completed'), icon: "icon-issue-closed", color: "#8c92a4")
+234: I18n.t('backend2.completed')  已完成
+
+progressing_state = enterprise.issue_states.find_by(title: I18n.t('backend2.have_in_hand'))
+247: I18n.t('backend2.have_in_hand')  进行中
+
+progressing_state = enterprise.issue_states.create(title: I18n.t('backend2.have_in_hand'), icon: "icon-issue-started", color: "#4a90e2")
+249: I18n.t('backend2.have_in_hand')  进行中
+
+open_state = enterprise.issue_states.find_by(title: I18n.t('backend2.to_do'))
+262: I18n.t('backend2.to_do')  待办的
+
+open_state = enterprise.issue_states.create(title: I18n.t('backend2.to_do'), icon: "icon-issue", color: "#fe7300")
+264: I18n.t('backend2.to_do')  待办的
+
+app/services/enterprises/issue_state_service.rb
+
+processing_id = issue_states.find { |issue_state| issue_state.title == I18n.t('backend2.have_in_hand') }&.id
+15: I18n.t('backend2.have_in_hand')  进行中
+
+finished_id = issue_states.find { |issue_state| issue_state.title == I18n.t('backend2.completed') }&.id
+16: I18n.t('backend2.completed')  已完成
+
+work = @enterprise.issue_types.create!(title: I18n.t('backend2.task'), color: '#FF6700')
+21: I18n.t('backend2.task')  任务
+
+create_issue_state_and_ref({title: I18n.t('backend2.to_do'), icon: 'icon-task-state-21', color: '#8c92a4'}, {issue_type_id: work.id, category: Issue::OPEN_STATE})
+22: I18n.t('backend2.to_do')  待办的
+
+create_issue_state_and_ref({title: I18n.t('backend2.have_in_hand'), icon: 'icon-task-state-23', color: '#8c92a4'}, {issue_type_id: work.id, category: Issue::PROGRESSING_STATE})
+23: I18n.t('backend2.have_in_hand')  进行中
+
+create_issue_state_and_ref({title: I18n.t('backend2.completed'), icon: 'icon-task-state-24', color: '#4baf50'}, {issue_type_id: work.id, category: Issue::CLOSED_STATE})
+24: I18n.t('backend2.completed')  已完成
+
+create_issue_state_and_ref({title: I18n.t('backend2.accepted'), icon: 'icon-task-state-24', color: '#4baf50'}, {issue_type_id: work.id, category: Issue::CLOSED_STATE})
+25: I18n.t('backend2.accepted')  已接受
+
+subject = @enterprise.issue_types.create!(title: I18n.t('backend2.topic'), color: '#00B8AE')
+27: I18n.t('backend2.topic')  课题
+
+create_issue_state_and_ref({title: I18n.t('backend2.to_do'), icon: 'icon-task-state-21', color: '#8c92a4'}, {issue_type_id: subject.id, category: Issue::OPEN_STATE})
+28: I18n.t('backend2.to_do')  待办的
+
+create_issue_state_and_ref({title: I18n.t('backend2.requirement_analysis'), icon: 'icon-task-state-10', color: '#8c92a4'}, {issue_type_id: subject.id, category: Issue::OPEN_STATE})
+29: I18n.t('backend2.requirement_analysis')  需求分析
+
+create_issue_state_and_ref({title: I18n.t('backend2.modeling'), icon: 'icon-task-state-23', color: '#8c92a4'}, {issue_type_id: subject.id, category: Issue::OPEN_STATE})
+30: I18n.t('backend2.modeling')  建模
+
+create_issue_state_and_ref({title: I18n.t('backend2.under_development'), icon: 'icon-task-state-23', color: '#8c92a4'}, {issue_type_id: subject.id, category: Issue::PROGRESSING_STATE})
+31: I18n.t('backend2.under_development')  开发中
+
+create_issue_state_and_ref({title: I18n.t('backend2.completed'), icon: 'icon-task-state-24', color: '#4baf50'}, {issue_type_id: subject.id, category: Issue::CLOSED_STATE})
+32: I18n.t('backend2.completed')  已完成
+
+create_issue_state_and_ref({title: I18n.t('backend2.accepted'), icon: 'icon-task-state-24', color: '#4baf50'}, {issue_type_id: subject.id, category: Issue::CLOSED_STATE})
+33: I18n.t('backend2.accepted')  已接受
+
+graduation_design = @enterprise.issue_types.create!(title: I18n.t('backend2.graduation_design'), color: '#6C2CD1')
+35: I18n.t('backend2.graduation_design')  毕业设计
+
+create_issue_state_and_ref({title: I18n.t('backend2.to_do'), icon: 'icon-task-state-21', color: '#8c92a4'}, {issue_type_id: graduation_design.id, category: Issue::OPEN_STATE})
+36: I18n.t('backend2.to_do')  待办的
+
+create_issue_state_and_ref({title: I18n.t('backend2.propose_a_thesis_and_expound_its_feasibility'), icon: 'icon-task-state-10', color: '#4a90e2'}, {issue_type_id: graduation_design.id, category: Issue::PROGRESSING_STATE})
+37: I18n.t('backend2.propose_a_thesis_and_expound_its_feasibility')  开题
+
+create_issue_state_and_ref({title: I18n.t('backend2.midterm_defense'), icon: 'icon-task-state-23', color: '#8c92a4'}, {issue_type_id: graduation_design.id, category: Issue::PROGRESSING_STATE})
+38: I18n.t('backend2.midterm_defense')  中期答辩
+
+create_issue_state_and_ref({title: I18n.t('backend2.final_defense'), icon: 'icon-task-state-23', color: '#8c92a4'}, {issue_type_id: graduation_design.id, category: Issue::PROGRESSING_STATE})
+39: I18n.t('backend2.final_defense')  最终答辩
+
+create_issue_state_and_ref({title: I18n.t('backend2.completed'), icon: 'icon-task-state-24', color: '#4baf50'}, {issue_type_id: graduation_design.id, category: Issue::CLOSED_STATE})
+40: I18n.t('backend2.completed')  已完成
+
+demand = @enterprise.issue_types.create!(title: I18n.t('backend2.demand'), is_system: true, color: '#00BE2D', category: IssueType::FEATURE, ident: 'requirement', serial: 0)
+42: I18n.t('backend2.demand')  需求
+
+state_ref_01 = create_issue_state_and_ref({title: I18n.t('backend2.intention'), icon: 'icon-task-state-21', color: '#B6B6B6'}, {issue_type_id: demand.id, category: Issue::OPEN_STATE, state_to_any: true})
+43: I18n.t('backend2.intention')  意向
+
+state_ref_02 = create_issue_state_and_ref({title: I18n.t('backend2.have_in_hand'), icon: 'icon-task-state-25', color: '#0086D6'}, {issue_type_id: demand.id, category: Issue::PROGRESSING_STATE, state_to_any: false})
+44: I18n.t('backend2.have_in_hand')  进行中
+
+state_ref_03 = create_issue_state_and_ref({title: I18n.t('backend2.completed'), icon: 'icon-task-state-24', color: '#00BE2D'}, {issue_type_id: demand.id, category: Issue::CLOSED_STATE, state_to_any: false})
+45: I18n.t('backend2.completed')  已完成
+
+state_ref_04 = create_issue_state_and_ref({title: I18n.t('backend2.rejected'), icon: 'icon-task-state-7', color: '#EF0016'}, {issue_type_id: demand.id, category: Issue::REJECTED_STATE, state_to_any: false})
+46: I18n.t('backend2.rejected')  已拒绝
+
+defect = @enterprise.issue_types.create!(title: I18n.t('backend2.defect'), is_system: true, color: '#EF0016', category: IssueType::BUG, ident: 'bug', serial: 2)
+50: I18n.t('backend2.defect')  缺陷
+
+state_ref_01 = create_issue_state_and_ref({title: I18n.t('backend2.to_be_confirmed'), icon: 'icon-task-state-21', color: '#B6B6B6'}, {issue_type_id: defect.id, category: Issue::OPEN_STATE, state_to_any: true})
+51: I18n.t('backend2.to_be_confirmed')  待确认
+
+state_ref_02 = create_issue_state_and_ref({title: I18n.t('backend2.confirmed'), icon: 'icon-task-state-21', color: '#B6B6B6'}, {issue_type_id: defect.id, category: Issue::OPEN_STATE, state_to_any: false})
+52: I18n.t('backend2.confirmed')  已确认
+
+state_ref_03 = create_issue_state_and_ref({title: I18n.t('backend2.repairing'), icon: 'icon-task-state-25', color: '#0086D6'}, {issue_type_id: defect.id, category: Issue::PROGRESSING_STATE, state_to_any: false})
+53: I18n.t('backend2.repairing')  修复中
+
+state_ref_04 = create_issue_state_and_ref({title: I18n.t('backend2.fixed'), icon: 'icon-task-state-25', color: '#0086D6'}, {issue_type_id: defect.id, category: Issue::PROGRESSING_STATE, state_to_any: false})
+54: I18n.t('backend2.fixed')  已修复
+
+state_ref_05 = create_issue_state_and_ref({title: I18n.t('backend2.accepted'), icon: 'icon-task-state-24', color: '#00BE2D'}, {issue_type_id: defect.id, category: Issue::CLOSED_STATE, state_to_any: false})
+55: I18n.t('backend2.accepted')  已接受
+
+state_ref_06 = create_issue_state_and_ref({title: I18n.t('backend2.rejected'), icon: 'icon-task-state-7', color: '#EF0016'}, {issue_type_id: defect.id, category: Issue::REJECTED_STATE, state_to_any: false})
+56: I18n.t('backend2.rejected')  已拒绝
+
+state_to_any: default_state.title == I18n.t('backend2.to_do') # 只有待办的可以流转到任意状态
+86: I18n.t('backend2.to_do')  待办的
+
+app/services/enterprises/dashboard/members/create_service.rb
+
+if message == I18n.t('backend2.successfully_joined_the_enterprise')
+56: I18n.t('backend2.successfully_joined_the_enterprise')  已成功加入企业
+
+elsif message == I18n.t('backend2.invitation_email_sent')
+58: I18n.t('backend2.invitation_email_sent')  已发送邀请邮件
+
+app/services/enterprises/feedbacks/create_service.rb
+
+project.enterprise.issue_types.find_by(title: I18n.t('backend2.demand'))
+63: I18n.t('backend2.demand')  需求
+
+project.enterprise.issue_types.find_by(title: I18n.t('backend2.defect'))
+65: I18n.t('backend2.defect')  缺陷
+
+app/services/enterprises/after_create_service.rb
+
+demo_label = enterprise.labels.create({ name: I18n.t('backend2.novice_guidance'), color: '1083d6' })
+39: I18n.t('backend2.novice_guidance')  新手引导
+
+issue_states.find { |state| state.title == I18n.t('backend2.intention') }&.id
+91: I18n.t('backend2.intention')  意向
+
+issue_states.find { |state| state.title == I18n.t('backend2.have_in_hand') }&.id
+93: I18n.t('backend2.have_in_hand')  进行中
+
+app/services/alipay_auth_service.rb
+
+UserMessage.create(from_user_id: 1, to_user_id: alipay_auth.user_id, content: I18n.t('backend2.the_application_for_real_name_authentication_(alipay_real_name_authentication)_you_submitted_has_passed_the_review'))
+51: I18n.t('backend2.the_application_for_real_name_authentication_(alipay_real_name_authentication)  
+
+app/services/gitee_scan/create_service.rb
+
+key ||= DeployKey.create(user_id: 1, key: Settings.gitee_scan.scanner_deploy_key, title: I18n.t('backend2.giteescan_public_key'), key_owner: 'gitee-scan')
+113: I18n.t('backend2.giteescan_public_key')  GiteeScan 公钥
+
+app/controllers/application_controller.rb
+
+SM.find_by_ip(request.remote_ip).to_h[:country] == I18n.t('backend2.china') rescue false
+150: I18n.t('backend2.china')  中国
+
+app/controllers/admin/enterprise/businesses_controller.rb
+
+if params[:contacts_type].present? && params[:contacts_type] != I18n.t('backend2.whole')
+80: I18n.t('backend2.whole')  全部
+
+app/controllers/admin/enterprise/enterprise_promotions_controller.rb
+
+@promotions = Promotion.where("way != ?", I18n.t('backend2.exclusive_discount_code_of_the_vault'))
+78: I18n.t('backend2.exclusive_discount_code_of_the_vault')  金库专属优惠码
+
+app/controllers/self_services_controller.rb
+
+@records = volist_data if volist_data.first['status'] != I18n.t('backend2.service')
+18: I18n.t('backend2.service')  送达
+
+app/controllers/home_controller.rb
+
+.where(gitee_reward_water_bills: { state: 'completed', capital_name: I18n.t('backend2.bounty_income') })
+229: I18n.t('backend2.bounty_income')  赏金收入
+
+app/helpers/issue_helper.rb
+
+types.find_by(title: I18n.t('backend2.demand'))&.id
+60: I18n.t('backend2.demand')  需求
+
+types.find_by(title: I18n.t('backend2.defect'))&.id
+62: I18n.t('backend2.defect')  缺陷
+
+app/helpers/operate_logs/issue_helper.rb
+
+violation = change_value == I18n.t('censoring.default')
+291: I18n.t('censoring.default')  
+
+app/api/v3/ums.rb
+
+key ||= DeployKey.create(key: deploy_key, title: I18n.t('backend2.giteescan_public_key'), key_owner: 'gitee-scan')
+18: I18n.t('backend2.giteescan_public_key')  GiteeScan 公钥
+
+project.create_or_update_publish_limit_reason({reason: I18n.t('backend2.the_content_is_not_suitable_for_publicity')})
+241: I18n.t('backend2.the_content_is_not_suitable_for_publicity')  内容不适宜公开
+
+
+共扫描2577个文件，命中32个文件，91个词条

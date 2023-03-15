@@ -172,6 +172,17 @@ class PaseStructSql
   end
 end
 
+# 检查依赖
+
+begin
+  gem 'caxlsx'
+resuce Gem::MissingSpecError
+  # excel 导出依赖 gem 'caxlsx'
+  # gem install 'caxlsx'
+  puts "excel 导出依赖 gem 'caxlsx'"
+  puts "执行 gem install 'caxlsx' 安装"
+end
+
 if ARGV[0].nil? || ARGV[1].nil?
   puts '请填写解析文件路径, 导出文件存储路径：ruby parse_struct_sql.rb <解析文件路径> <导出文件存储路径>'
   exit

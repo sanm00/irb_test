@@ -1,0 +1,23 @@
+  a: a
+  b:
+    b1: b1
+    b2:
+      bb1: bb1
+      bb2:
+        bbb1:
+          bbbb1: bbbb1
+        bbbb2: bbbb2
+    b3: b3
+  c: c
+  d:
+    d1: 1
+    d2: 2
+  e:
+    e1:
+      e3:
+        e4:
+          e5: 5
+    e2: 2
+  f:
+    f1: 1
+  g: 2

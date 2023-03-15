@@ -23,3 +23,5 @@ module ChineseMoney
     chinese_money
   end
 end
+
+puts ChineseMoney.show_money(100101.01)
